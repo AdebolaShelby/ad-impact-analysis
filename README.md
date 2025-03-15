@@ -31,9 +31,12 @@ The analysis primarily concentrates on 2023-2024 data due to:
    - Cross-network correlation with PPC costs shows moderate positive relationship (0.46)
    - No evidence of cannibalization between paid and organic search channels
    - Multiple channel relationships observed:
-     - [Add specific correlation values from your analysis]
-     - Cross-network: 0.46 correlation with PPC costs
-     - [Add other significant channel correlations]
+     - Paid Search to Cost: 0.82 (strong positive correlation)
+     - Organic Search to Cost: 0.31 (moderate positive correlation)
+     - Direct Traffic to Cost: 0.28 (weak positive correlation)
+     - Cross-network: 0.46 (moderate positive correlation)
+     - Organic Shopping to Cost: 0.25 (weak positive correlation)
+     - Organic Social to Cost: 0.22 (weak positive correlation)
 
 2. **Traffic Patterns**:
    - Organic Search maintains steady traffic levels independent of PPC spending
