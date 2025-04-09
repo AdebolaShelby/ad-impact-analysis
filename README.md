@@ -1,120 +1,136 @@
-# Correlation vs Causation - Ad Impact Analysis
+# Ad Channel Impact Analysis
 
 ## Project Overview
-The objective of this project is to statistically analyze whether Paid Search is cannibalizing Organic Search through a combination of correlation analysis, causal inference techniques, and controlled experiments.
+A comprehensive statistical analysis examining the relationships between Paid Search advertising and other marketing channels, with a focus on potential cannibalization effects on Organic Search performance.
 
-## Data Processing & Methodology
+## Key Findings 📊
 
-### Data Cleaning and Preprocessing
-- **Campaign Performance Data**:
-  - Removed unnecessary columns (Currency code, CTR, Avg. CPC, etc.)
-  - Standardized date formats
-  - Converted string dates to datetime format
+### Channel Correlations with PPC Spend
+| Channel | Correlation | Interpretation |
+|---------|------------|----------------|
+| Paid Search | 0.82 | Strong Positive |
+| Cross-network | 0.46 | Moderate Positive |
+| Organic Search | 0.31 | Moderate Positive |
+| Direct Traffic | 0.28 | Weak Positive |
+| Organic Shopping | 0.25 | Weak Positive |
+| Organic Social | 0.22 | Weak Positive |
 
-- **Google Analytics (GA4) Data**:
-  - Created date components (Year, Month, Day)
-  - Aggregated metrics by channel, year, and month
-  - Filtered out irrelevant channels (Display, Email, Referral, SMS, etc.)
-  - Focused on primary channels: Organic Search, Paid Search, and Direct
+### Major Insights
+- **No Cannibalization Effect**: Data shows no evidence of Paid Search cannibalizing Organic Search traffic
+- **Complementary Relationships**: Channels demonstrate supportive rather than competitive behavior
+- **Positive Impact**: PPC spending shows positive correlation with all analyzed channels
 
-### Analysis Focus
-The analysis primarily concentrates on 2023-2024 data due to:
-- Data recency and relevance to current market conditions
-- Complete and consistent GA4 data availability
-- More reliable comparison between channels
-- Better reflection of current marketing strategies
+## Technical Implementation 🛠️
 
-## Key Findings
+### Data Processing Pipeline
+1. **Campaign Performance Data**
+   - Removed redundant columns (Currency, CTR, CPC)
+   - Standardized date formats
+   - Normalized temporal data
 
-### Relationship Between Paid Search and Other Channels
-1. **Correlation Analysis**:
-   - Cross-network correlation with PPC costs shows moderate positive relationship (0.46)
-   - No evidence of cannibalization between paid and organic search channels
-   - Multiple channel relationships observed:
-     - Paid Search to Cost: 0.82 (strong positive correlation)
-     - Organic Search to Cost: 0.31 (moderate positive correlation)
-     - Direct Traffic to Cost: 0.28 (weak positive correlation)
-     - Cross-network: 0.46 (moderate positive correlation)
-     - Organic Shopping to Cost: 0.25 (weak positive correlation)
-     - Organic Social to Cost: 0.22 (weak positive correlation)
+2. **Google Analytics (GA4) Data**
+   - Created temporal components (Year, Month, Day)
+   - Channel-based aggregation
+   - Filtered to core channels:
+     - Organic Search
+     - Paid Search
+     - Direct
 
-2. **Traffic Patterns**:
-   - Organic Search maintains steady traffic levels independent of PPC spending
-   - Paid Search shows expected direct correlation with PPC costs
-   - Cross-network performance shows moderate positive relationship with PPC investment
-   - Channels demonstrate complementary rather than competitive relationships
+### Analysis Methodology
+- **Time Frame**: 2023-2024
+- **Statistical Approach**: Correlation analysis with visualization
+- **Channel Focus**: Primary traffic sources only
+- **Data Quality**: Filtered for consistency and completeness
 
-3. **Channel Performance (2024 Snapshot)**:
-   - Organic Search:
-     - February: 176,548 sessions
-     - May: 171,732 sessions
-     - July: 194,749 sessions
-   - Paid Search:
-     - February: 102,637 sessions
-     - May: 99,269 sessions
-     - July: Shows fluctuating patterns
+## Channel Performance Metrics 📈
 
-## Important Considerations
-- Correlation coefficients interpretation:
-  - 0.0 to 0.3: Weak correlation
-  - 0.3 to 0.7: Moderate correlation
-  - 0.7 to 1.0: Strong correlation
-- Analysis accounts for:
-  - Seasonality
-  - Market conditions
-  - Recent changes in search algorithms
-  - Post-pandemic traffic patterns
+### 2024 Traffic Snapshot
+```python
+Organic Search:
+- February: 176,548 sessions
+- May: 171,732 sessions
+- July: 194,749 sessions
 
-## Methodology Notes
-- Focus on primary channels (Organic Search, Paid Search, Direct) for targeted analysis
-- Excluded channels with insufficient or inconsistent data
-- Used recent data (2023-2024) for more actionable insights
-- Applied statistical analysis to understand channel relationships
+Paid Search:
+- February: 102,637 sessions
+- May: 99,269 sessions
+- July: Variable
+```
 
-## Conclusions
-The analysis reveals moderate positive correlations between PPC spending and various channels, particularly noting the 0.46 correlation with cross-network performance. This suggests that paid search activities complement rather than cannibalize other channels, providing valuable insights for marketing strategy and budget allocation decisions.
+## Interpretation Guide 📋
 
-## Next Steps
+### Correlation Strength Scale
+- 0.0 to 0.3: Weak correlation
+- 0.3 to 0.7: Moderate correlation
+- 0.7 to 1.0: Strong correlation
 
-### Advanced Analysis
-1. **Time Series Analysis**
-   - Implement lag analysis to understand delayed effects of PPC spending
-   - Analyze seasonal patterns and their impact on channel relationships
-   - Create forecasting models for channel performance
+### Analysis Controls
+- Seasonality adjustments
+- Market condition considerations
+- Search algorithm updates
+- Post-pandemic patterns
 
-2. **Controlled Experiments**
-   - Design A/B tests with varying PPC budget allocations
-   - Test different geographic markets with controlled PPC spending
-   - Measure impact on organic traffic during PPC pause periods
+## Future Roadmap 🎯
 
-3. **Granular Data Analysis**
-   - Break down analysis by device type (mobile vs desktop)
-   - Analyze performance by keyword categories
-   - Investigate landing page overlap between paid and organic traffic
+### Phase 1: Advanced Analytics
+- [ ] Time series analysis with lag effects
+- [ ] Seasonal pattern identification
+- [ ] Channel performance forecasting
 
-### Implementation Recommendations
-1. **Budget Optimization**
-   - Develop dynamic budget allocation model based on correlation findings
-   - Identify optimal spending thresholds for each channel
-   - Create automated alerts for significant correlation changes
+### Phase 2: Experimentation
+- [ ] A/B testing framework for PPC budgets
+- [ ] Geographic market testing
+- [ ] Traffic impact studies during PPC pauses
 
-2. **Channel Strategy**
-   - Leverage complementary channel relationships
-   - Develop integrated reporting dashboard
-   - Create cross-channel attribution model
+### Phase 3: Granular Analysis
+- [ ] Device-type segmentation
+- [ ] Keyword category analysis
+- [ ] Landing page correlation studies
 
-3. **Performance Monitoring**
-   - Implement real-time correlation monitoring
-   - Set up automated reporting for channel interactions
-   - Develop KPIs for cross-channel effectiveness
+## Implementation Strategy 💡
 
-### Data Enhancement
-1. **Additional Data Points**
-   - Include conversion data across channels
-   - Add competitor spending data if available
-   - Incorporate cost per acquisition metrics
+### Budget Optimization
+- Develop dynamic budget allocation model based on correlation findings
+- Identify optimal spending thresholds for each channel
+- Create automated alerts for significant correlation changes
 
-2. **Quality Improvements**
-   - Enhance data granularity to hourly levels
-   - Include geographic segmentation
-   - Add customer journey touchpoint data
+### Channel Strategy
+- Leverage complementary channel relationships
+- Develop integrated reporting dashboard
+- Create cross-channel attribution model
+
+### Performance Monitoring
+- Implement real-time correlation monitoring
+- Set up automated reporting for channel interactions
+- Develop KPIs for cross-channel effectiveness
+
+## Data Enhancement Plan 📊
+
+### Short-term Goals
+- [ ] Conversion tracking integration
+- [ ] Competitor data incorporation
+- [ ] Cost per acquisition metrics
+
+### Long-term Goals
+- [ ] Hourly data granularity
+- [ ] Geographic segmentation
+- [ ] Customer journey mapping
+
+## Tech Stack
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+
+## Installation & Usage
+```bash
+# Clone repository
+git clone [repository-url]
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run analysis
+jupyter notebook ad-impact-correlation-analysis.ipynb
+```
